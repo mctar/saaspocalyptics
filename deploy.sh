@@ -6,8 +6,9 @@
 # REPO below. The CNAME lives in public/ so Vite copies it into dist/ on build.
 set -euo pipefail
 
-# Cron runs with a bare PATH; make sure Homebrew's node/npm are findable.
-export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+# cron/systemd run with a bare PATH; cover Homebrew (mac) and system (Linux) bins
+# so node/npm/cloudflared resolve on both the Mac and hugin.
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 VENV="$SCRIPT_DIR/.venv/bin/python"

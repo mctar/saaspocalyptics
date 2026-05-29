@@ -75,6 +75,7 @@ buckets:
       - { ticker: PATH, name: UiPath }
       - { ticker: DOCN, name: DigitalOcean }
       - { ticker: FROG, name: JFrog }
+      - { ticker: DSY.PA, name: Dassault Systèmes, currency: EUR }
 
   # ---------------------------------------------------------------------------
   # Global system integrators — the services firms whose fortunes are tied to
