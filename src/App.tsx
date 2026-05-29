@@ -75,10 +75,10 @@ export default function App() {
       <footer className="border-t border-rule">
         <div className="mx-auto max-w-5xl px-4 py-10 text-xs leading-relaxed text-ink-soft">
           <p className="max-w-3xl">
-            Prices refresh hourly via Yahoo Finance — intraday during market hours, last close
-            otherwise. Year-to-date is measured from the first 2026 trading close and is
-            split-adjusted. Non-USD names show local-currency prices; percentage changes are
-            currency-neutral. Not investment advice — a market-watching broadsheet, not a terminal.
+            Prices via Yahoo Finance, refreshed a few times a day and split-adjusted. Year-to-date
+            is measured from the first 2026 trading close. Non-USD names show local-currency prices;
+            percentage changes are currency-neutral. Not investment advice — a market-watching
+            broadsheet, not a terminal.
           </p>
           <p className="tnum mt-3 uppercase tracking-[0.12em] text-ink-faint">
             Generated {data.generatedAt} · {allCompanies.length} names tracked
