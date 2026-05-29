@@ -44,21 +44,38 @@ npm run build    # -> dist/ (includes data/market.json and CNAME)
 
 ## Deploy
 
-Publishing mirrors the `vordur` pattern: build locally, push `dist/` to the
-`gh-pages` branch. `deploy.sh` runs the whole chain (fetch → build → push).
+`deploy.sh` runs the whole chain — fetch → build → push `dist/` to the `gh-pages`
+branch — and GitHub Pages serves it at `saaspocalyptics.btrbot.com`.
 
-One-time setup:
+The schedule runs on **hugin** (not a laptop) via a user-level systemd timer,
+hourly. During US/EU/IN market hours the daily bar reflects the live intraday
+price, so the site stays fresh; `deploy.sh` only commits when the data actually
+changed, so off-hours runs are no-ops.
 
-1. Create the GitHub repo and an empty `gh-pages` branch.
-2. Set `REPO` in `deploy.sh` (default: `git@github.com:mctar/saaspocalyptics.git`).
-3. Confirm the custom domain in `public/CNAME` (placeholder:
-   `saaspocalyptics.btrbot.com`) and point a DNS CNAME at `mctar.github.io`.
+Units live in `~/.config/systemd/user/` on hugin:
 
-Then wire a weekday cron entry (after the US close settles, ~21:30 UTC):
-
-```cron
-30 21 * * 1-5  /Users/thordur/experiments/saaspocalyptics/deploy.sh >> /tmp/saaspocalyptics.log 2>&1
+```ini
+# saaspocalyptics.service  (Type=oneshot -> deploy.sh)
+# saaspocalyptics.timer:
+[Timer]
+OnCalendar=hourly
+RandomizedDelaySec=180   # jitter so we don't hit Yahoo on the dot
+Persistent=true          # catch up a missed run after a reboot
 ```
+
+```bash
+systemctl --user list-timers saaspocalyptics.timer      # next/last run
+systemctl --user start saaspocalyptics.service          # run now
+journalctl --user -u saaspocalyptics.service -n 30       # logs
+```
+
+Linger is enabled (`loginctl enable-linger thordur`) so the timer runs without
+an active login. hugin authenticates to GitHub as `mctar`, so the push needs no
+deploy key.
+
+One-time setup (already done): create the repo + empty `gh-pages` branch, set
+`REPO` in `deploy.sh`, confirm `public/CNAME` and point a DNS CNAME at
+`mctar.github.io`.
 
 ## Notes
 
