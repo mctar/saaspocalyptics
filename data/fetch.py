@@ -136,6 +136,16 @@ def main() -> None:
 
     print(f"\nFetched {ok}/{total} tickers.")
 
+    # Safety valve: a rate-limited or network-starved run can come back with most
+    # or all tickers empty. Never overwrite the last-good market.json with a
+    # gutted one — exit non-zero so deploy.sh aborts and the published data stands.
+    MIN_OK_RATIO = 0.8
+    if total == 0 or ok / total < MIN_OK_RATIO:
+        sys.exit(
+            f"error: only {ok}/{total} tickers resolved (< {MIN_OK_RATIO:.0%}). "
+            "Refusing to overwrite last-good data — likely a rate limit; retry later."
+        )
+
     if args.dry_run:
         print("(dry run — not writing)")
         return
