@@ -1,2 +1,6 @@
-yfinance>=0.2.40
+yfinance>=0.2.50
+pandas>=2.0
 pyyaml>=6.0
+# Note: we deliberately do NOT depend on curl_cffi. yfinance auto-uses it when
+# present, but its bundled TLS lib is broken on hugin's aarch64 Linux. A single
+# batched yf.download a few times a day is gentle enough on Yahoo without it.
