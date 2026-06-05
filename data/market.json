@@ -1,6 +1,6 @@
 {
   "asOf": "2026-06-05",
-  "generatedAt": "2026-06-05T09:45:08+00:00",
+  "generatedAt": "2026-06-05T09:50:53+00:00",
   "baselineDate": "2026-01-01",
   "buckets": {
     "sp500_software": {
@@ -847,7 +847,7 @@
             470.8432,
             481.3265,
             477.1551,
-            457.3434,
+            457.3433,
             452.5049,
             449.1399,
             478.4493,
@@ -2142,11 +2142,11 @@
           "name": "Dassault Syst\u00e8mes",
           "currency": "EUR",
           "baseline": 23.09,
-          "last": 20.45,
+          "last": 20.43,
           "lastDate": "2026-06-05",
-          "ytdPct": -11.43,
-          "fromHighPct": -16.26,
-          "fromLowPct": 29.86,
+          "ytdPct": -11.52,
+          "fromHighPct": -16.34,
+          "fromLowPct": 29.73,
           "sparkline": [
             23.0892,
             23.8095,
@@ -2187,13 +2187,13 @@
             20.06,
             18.805,
             19.43,
-            20.45
+            20.43
           ],
           "fundamentals": {
             "revenueGrowthPct": -4.1,
             "operatingMarginPct": 23.4,
             "ruleOf40": 19.3,
-            "marketCap": 26856820736
+            "marketCap": 26830553088
           }
         },
         {
@@ -2803,7 +2803,7 @@
           "fromHighPct": -37.66,
           "fromLowPct": 16.98,
           "sparkline": [
-            80.3022,
+            80.3023,
             83.0982,
             84.2344,
             85.6571,
@@ -3033,15 +3033,15 @@
           "name": "Tata Consultancy Services",
           "currency": "INR",
           "baseline": 3127.37,
-          "last": 2201.2,
+          "last": 2200.1,
           "lastDate": "2026-06-05",
-          "ytdPct": -29.62,
-          "fromHighPct": -31.07,
+          "ytdPct": -29.65,
+          "fromHighPct": -31.11,
           "fromLowPct": 0.0,
           "sparkline": [
             3127.3726,
             3154.8926,
-            3104.6011,
+            3104.6008,
             3166.7144,
             3163.8018,
             3060.7986,
@@ -3078,13 +3078,13 @@
             2276.2,
             2258.8999,
             2446.8999,
-            2201.2
+            2200.1001
           ],
           "fundamentals": {
             "revenueGrowthPct": 9.6,
             "operatingMarginPct": 25.3,
             "ruleOf40": 34.9,
-            "marketCap": 7964133949440
+            "marketCap": 7960154603520
           }
         },
         {
@@ -3210,11 +3210,11 @@
           "name": "Infosys (NSE)",
           "currency": "INR",
           "baseline": 1629.8,
-          "last": 1197.3,
+          "last": 1197.2,
           "lastDate": "2026-06-05",
           "ytdPct": -26.54,
           "fromHighPct": -29.15,
-          "fromLowPct": 9.34,
+          "fromLowPct": 9.33,
           "sparkline": [
             1629.8,
             1612.2,
@@ -3255,13 +3255,13 @@
             1167.7,
             1160.9,
             1270.8,
-            1197.3
+            1197.2
           ],
           "fundamentals": {
             "revenueGrowthPct": 6.6,
             "operatingMarginPct": 20.9,
             "ruleOf40": 27.5,
-            "marketCap": 4847799631872
+            "marketCap": 4845370605568
           }
         },
         {
@@ -3320,7 +3320,7 @@
             "revenueGrowthPct": 3.7,
             "operatingMarginPct": 12.0,
             "ruleOf40": 15.7,
-            "marketCap": 17633314816
+            "marketCap": 17624956928
           }
         },
         {
@@ -3334,7 +3334,7 @@
           "fromHighPct": -8.34,
           "fromLowPct": 40.59,
           "sparkline": [
-            287.7297,
+            287.7298,
             292.8921,
             300.2852,
             305.033,
@@ -4466,8 +4466,8 @@
       "pctUp": 33.3,
       "buckets": {
         "sp500_software": -15.29,
-        "big_saas_outside": -11.43,
-        "gsi": -29.62
+        "big_saas_outside": -11.52,
+        "gsi": -29.65
       },
       "igvYtd": -2.49,
       "spxYtd": 10.58
